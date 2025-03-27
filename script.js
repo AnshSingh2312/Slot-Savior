@@ -34,7 +34,7 @@ document.getElementById('login-form').onsubmit = function(event) {
 };
 
 function showLoginPage() {
-  window.location.href = "login.html";
+  window.location.href = "index.html";
 }
 
 function showDashboard() {
