@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Slot</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <script src="header-sidebar.js"></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header">
+            <div class="logo">
+                <img src="Website-logo.jpg" height="80" alt="Website Logo">
+            </div>
+            <nav>
+                <button onclick="showDashboard()">Dashboard</button>
+                <button onclick="showReservationPage()">Reservations</button>
+                <button onclick="showHelpPage()">Help</button>
+            </nav>
+            <!-- Profile Image with Dropdown Menu -->
+            <div class="profile-container">
+                <img src="UserProfilePhoto.png" alt="Profile Image" id="profile-img" class="profile-img">
+
+                <div id="dropdown-menu" class="dropdown-menu">
+                    
+                    <div class="user-info">
+                        <img src="UserProfilePhoto.png" class="user-pic" alt="User Profile">
+                        <p id="username-display" class="user-name">Username</p>
+                    </div>
+                    <hr>
+
+                    <button id="user-profile" onclick="showPersonalDetailsPage()">User Profile</button>
+                    <button id="change-password" onclick="showChangePasswordPage()">Change Password</button>
+                    <button id="logout-btn" onclick="showLogout()">Logout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <hr>
+
+        <!-- Entry Pass -->
+        <div id="entry-pass" class="pass-generation" style="display:block;">
+            <h1>Entry Pass</h1>
+            <div id="entry-pass-details" class="pass-detail"></div>
+            <div id="qr-code" class="qrCodeImage"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const username = localStorage.getItem('loggedInUser');
+            const reservations = JSON.parse(localStorage.getItem(`reservations_${username}`)) || [];
+      
+            if (reservations.length > 0) {
+                const latestReservation = reservations[reservations.length - 1];
+                showEntryPass(
+                    latestReservation.username,
+                    latestReservation.slot,
+                    latestReservation.date,
+                    latestReservation.startTime,
+                    latestReservation.duration,
+                    latestReservation.carNoPlate
+                );
+            }
+        });
+      </script>
+      
+</body>
+</html>

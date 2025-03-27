@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header with Profile Dropdown</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <script src="header-sidebar.js"></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header">
+            <div class="logo">
+                <img src="Website-logo.jpg" height="80" alt="Website Logo">
+            </div>
+            <nav>
+                <button onclick="showDashboard()">Dashboard</button>
+                <button onclick="showReservationPage()">Reservations</button>
+                <button onclick="showHelpPage()">Help</button>
+            </nav>
+            <!-- Profile Image with Dropdown Menu -->
+            <div class="profile-container">
+                <img src="UserProfilePhoto.png" alt="Profile Image" id="profile-img" class="profile-img">
+
+                <div id="dropdown-menu" class="dropdown-menu">
+                    
+                    <div class="user-info">
+                        <img src="UserProfilePhoto.png" class="user-pic" alt="User Profile">
+                        <p id="username-display" class="user-name">Username</p>
+                    </div>
+                    <hr>
+
+                    <button id="personal-details" onclick="showPersonalDetailsPage()">User Profile</button>
+                    <button id="change-password" onclick="showChangePasswordPage()">Change Password</button>
+                    <button id="logout-btn" onclick="showLogout()">Logout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <hr>
+
+    <!-- Sidebar-->
+    <aside class="sidebar">
+        <div class="user-photo-container">
+            <img src="UserProfilePhoto.png" alt="User Profile Photo" class="user-photo-img">
+            <p id="sidebar-username-display" class="user-name"></p>
+        </div>
+        <h2>User Profile</h2>
+        <ul>
+            <button id="personal-details" onclick="showPersonalDetailsPage()">Personal Details</button>
+            <button id="vehicle-details" onclick="showVehicleDetailsPage()">Vehicle Details</button>
+            <button id="change-password" onclick="showChangePasswordPage()">Change Password</button>
+            <button id="logout-btn" onclick="showLogout()">Logout</button>
+        </ul>
+    </aside>
+
+    <!-- Vehicle Details Page -->
+    <div id="uservehicledetails" class="uservehicledetail">
+        <div class="vd-form-container">
+            
+            <form id="vehicle-information-form" class="vehicle-information-form">
+                <h1>Vehicle Information</h1>
+                
+                <label for="vehicleMake">Vehicle Make:</label>
+                <input type="text" id="vehicleMake" placeholder="Enter vehicle make" required>
+    
+                <label for="vehicleModel">Vehicle Model:</label>
+                <input type="text" id="vehicleModel" placeholder="Enter vehicle model" required>
+    
+                <label for="vehicleYear">Vehicle Year:</label>
+                <input type="number" id="vehicleYear" placeholder="Enter vehicle year" required min="1900" max="2023">
+    
+                <label for="vehicleColor">Vehicle Color:</label>
+                <input type="text" id="vehicleColor" placeholder="Enter vehicle color" required>
+    
+                <label for="licensePlate">License Plate Number:</label>
+                <input type="text" id="licensePlate" placeholder="Enter license plate number" required>
+    
+                <label for="vehicleType">Vehicle Type:</label>
+                <select id="vehicleType" required>
+                    <option value="" disabled selected>Select vehicle type</option>
+                    <option value="sedan">Sedan</option>
+                    <option value="suv">SUV</option>
+                    <option value="truck">Truck</option>
+                    <option value="motorcycle">Motorcycle</option>
+                    <option value="van">Van</option>
+                </select>
+    
+                <label for="vin">Vehicle Identification Number (VIN):</label>
+                <input type="text" id="vin" placeholder="Enter VIN" required>
+    
+                <label for="engineType">Engine Size/Type:</label>
+                <input type="text" id="engineType" placeholder="Enter engine size/type">
+    
+                <label for="fuelType">Fuel Type:</label>
+                <select id="fuelType">
+                    <option value="" disabled selected>Select fuel type</option>
+                    <option value="petrol">Petrol</option>
+                    <option value="diesel">Diesel</option>
+                    <option value="electric">Electric</option>
+                    <option value="hybrid">Hybrid</option>
+                </select>
+    
+                <h3>Upload Documents (Optional)</h3>
+                <label for="vehicleRegistration">Upload Vehicle Registration Document:</label>
+                <input type="file" id="vehicleRegistration" accept=".pdf,.jpg,.png">
+    
+                <label for="insuranceDocument">Upload Insurance Document:</label>
+                <input type="file" id="insuranceDocument" accept=".pdf,.jpg,.png">
+    
+                <button type="submit">Save Vehicle Information</button>
+            </form>
+            <div class="vehicle-photo-container">
+                <h3>Vehicle Photo</h3>
+                <label for="vehiclePhoto">Upload a photo of your vehicle:</label>
+                <input type="file" id="vehiclePhoto" accept="image/*" required>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

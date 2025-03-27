@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Slot</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <script src="header-sidebar.js"></script>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header">
+            <div class="logo">
+                <img src="Website-logo.jpg" height="80" alt="Website Logo">
+            </div>
+            <nav>
+                <button onclick="showDashboard()">Dashboard</button>
+                <button onclick="showReservationPage()">Reservations</button>
+                <button onclick="showHelpPage()">Help</button>
+            </nav>
+            <!-- Profile Image with Dropdown Menu -->
+            <div class="profile-container">
+                <img src="UserProfilePhoto.png" alt="Profile Image" id="profile-img" class="profile-img">
+
+                <div id="dropdown-menu" class="dropdown-menu">
+                    
+                    <div class="user-info">
+                        <img src="UserProfilePhoto.png" class="user-pic" alt="User Profile">
+                        <p id="username-display" class="user-name">Username</p>
+                    </div>
+                    <hr>
+
+                    <button id="user-profile" onclick="showPersonalDetailsPage()">User Profile</button>
+                    <button id="change-password" onclick="showChangePasswordPage()">Change Password</button>
+                    <button id="logout-btn" onclick="showLogout()">Logout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <hr>
+
+    <!-- Help Page -->
+    <div class="contact-info">
+        <h1>Help Center</h1>
+        
+        <h2>We're Here to help</h2>
+        <div id="search" class="searchbar">
+            <div class="input-wrapper">
+                <input type="search" id="searchInput" placeholder=" " required>
+                <label for="searchInput">Need Help?</label>
+            </div>
+            <button onclick="searchParkingArea()">Search</button>
+        </div>
+
+        <div class="supports">
+            <div class="contact-item">
+                <img src="phoneicon.png" alt="Phone " class="contact-icon-phone-icon">
+                <p>Help Line No: 1234-567-890</p>
+                <p>Our dedicated team is available 24/7 to assist you with any questions or issues.</p>
+                <p> </p>
+                <p> </p>
+            </div>
+            <div class="contact-item">
+                <img src="emailicon.png" alt="Email " class="contact-icon-email-icon">
+                <p>Email: slotsavior@help.com</p>
+                <p>Write to us, and we’ll get back to you within 24 hours.</p>
+                <p> </p>
+                <p> </p>
+                <p> </p>
+            </div>
+            <div class="contact-item">
+                <img src="UserProfilePhoto.png" alt="User Profile" class="contact-icon-profile-icon">
+                <p>Need Help Creating Your Profile?</p>
+                <p>Download the PowerPoint guide below to help you create and update your profile easily.</p>
+                
+                <!-- Link to download the PPT file -->
+                <a href="path/to/your/guide.pptx" download="Profile_Creation_Guide.pptx">
+                    <button>Download Profile Creation Guide</button>
+                </a>
+            </div>
+        </div>
+    </div>    
+</body>
